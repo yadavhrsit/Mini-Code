@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    color:white;
+}
+
+.body{
+    height: 100vh;
+    width: 100vw;
+    background: grey;
+}
+.navbar{
+    height: 5vh;
+    width: 100%;
+    background: rgb(223, 64, 64);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative; 
+    z-index: 0;
+}
+.nav{
+    
+    margin-right: 1%;
+    z-index: 1;
+}
+.nav ul{
+    list-style: none;
+    text-align: center;
+}
+.nav ul li{
+    text-decoration: none;
+    display: inline;
+    font-size: 2rem;
+    margin-right: 1.5vw;
+}
+
+.hamburger{
+    height:5%;
+    width:4rem;
+    left: 2%;
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    position: absolute;
+    display: none;
+}
+.lines{
+    background-color: white;
+    height:20%;
+}
+.line1{
+    transition: all 500ms ease-in-out;
+    transform-origin: left;
+    
+}
+.line2{
+    transition: all 500ms ease-in-out;
+    transform-origin: left;
+}
+.line3{
+    transition: all 500ms ease-in-out;
+    transform-origin: left;
+}
+
+.navbar.opened{
+    transition: all 500ms ease-in-out;
+    transform-origin: left;
+    transform: translateX(0%);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 679px) {
+    .hamburger{
+        display: flex;
+        margin-top: 1vh;
+    }
+    .open.line1{
+        transition: all 500ms ease-in-out;
+        transform-origin: left;
+        transform: rotateZ(30deg);
+    }
+    .open.line2{
+        transition: all 500ms ease-in-out;
+        transform:rotateY(90deg);
+    }
+    .open.line3{
+        transition: all 500ms ease-in-out;
+        transform-origin: left;
+        transform: rotateZ(-30deg);
+    }
+    .navbar{
+        flex-direction: column;
+        width: 25%;
+        height: 100vh;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+        transition: all 0.5s ease-in-out;
+        transform-origin: left;
+        transform: translateX(-100%);
+    }
+    
+    .nav{
+        margin-top: 60px;
+        flex-direction: column;
+        height: 100%;
+    }
+    .nav ul{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav ul li{
+        font-size: 1.5rem;
+        margin-top: 2vh;
+    }
+
+
+}
